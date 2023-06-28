@@ -3,6 +3,7 @@ package com.campelo.ciclodevidadaactivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("ciclo_de_vida", "onCreate()")
         setContentView(R.layout.activity_main)
 
         btnEntrar = findViewById(R.id.btnEntrar)
@@ -33,5 +35,35 @@ class MainActivity : AppCompatActivity() {
         btnEncerrar.setOnClickListener {
             finish()
         }
+    }
+
+    override fun onStart() {
+        Log.i("ciclo_de_vida", "onStart()")
+        super.onStart()
+    }
+
+    override fun onResume() {
+        Log.i("ciclo_de_vida", "onResume()")
+        super.onResume()
+    }
+
+    override fun onPause() {
+        Log.i("ciclo_de_vida", "onPause()")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Log.i("ciclo_de_vida", "onStop()")
+        super.onStop()
+    }
+
+    override fun onRestart() {
+        Log.i("ciclo_de_vida", "onRestart()")
+        super.onRestart()
+    }
+
+    override fun onDestroy() {
+        Log.i("ciclo_de_vida", "onDestroy()")
+        super.onDestroy()
     }
 }
